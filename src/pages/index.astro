@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { posts } from '../data/posts';
+---
+
+<BaseLayout title="Homepage">
+  <div class="heading">Homepage</div>
+
+  <p>This is my personal website. Opinions are my own.</p>
+
+  <div class="heading">Articles</div>
+
+  <div style="text-align: left; margin-bottom: 2ch;">
+    {
+      posts.map((post) => (
+        <div style="margin-bottom: 0.6ch;">
+          <span>{post.displayDate}: </span>
+          <a href={`/posts/${post.slug}`} class="home-article-link">
+            {post.title}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>

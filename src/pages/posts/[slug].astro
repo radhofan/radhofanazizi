@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { posts, type Post } from '../../data/posts';
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout title={post.title} description={post.description}>
+  <div class="heading">{post.title}</div>
+
+  <div style="color: #666; font-size: 0.9em; margin-bottom: 2ch;">
+    Published: {post.formattedDate}
+  </div>
+
+  <article set:html={post.contentHtml} />
+
+  <div style="margin-top: 4ch; border-top: 1px solid #ccc; padding-top: 1.5ch;">
+    <a href="/">← Back to Homepage</a>
+  </div>
+</BaseLayout>

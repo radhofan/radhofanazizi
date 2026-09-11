@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = {
+  featured: [
+    {
+      title: 'Timbanganten',
+      description: 'Modern web frontend digitizing cemetery records for the Timbanganten Historical Foundation with sub-second search and interactive filters.',
+      badge: 'Fullstack Javascript',
+      githubUrl: 'https://github.com/radhofan/timbanganten-frontend'
+    },
+    {
+      title: 'Kakeibo - AniList Finder',
+      description: 'Full-stack anime tracking and community platform where users log watch history, write reviews, and query AniList GraphQL API with read-through caching and admin panel.',
+      badge: 'PHP',
+      githubUrl: 'https://github.com/radhofan/kakeibo'
+    },
+    {
+      title: 'Kasane',
+      description: 'Multi-layered web platform designed for scalable component composition, user workflow management, and modular state.',
+      badge: 'Fullstack Javascript',
+      githubUrl: 'https://github.com/radhofan/kasane'
+    },
+    {
+      title: 'CariCuaca',
+      description: 'Interactive weather app with a 3D globe (CesiumJS) for live 7-day forecasts powered by Open-Meteo. Features a stateless ASP.NET Core backend with rate limiting and in-memory caching.',
+      badge: '.NET',
+      githubUrl: 'https://github.com/radhofan/hibana'
+    },
+    {
+      title: 'Flight Aggregate',
+      description: 'Flight search and aggregation backend normalizing multi-airline API responses with parallel queries, retry/backoff, caching, best-value ranking, and timezone filtering.',
+      badge: 'Golang',
+      githubUrl: 'https://github.com/radhofan/BookCabin---Home-Coding-Test'
+    },
+    {
+      title: 'Splsh',
+      description: 'Lightweight, containerless development environment manager in Go that provisions project-local toolchains natively and prevents global PATH pollution via declarative YAML manifests.',
+      badge: 'Golang',
+      githubUrl: 'https://github.com/radhofan/splsh'
+    },
+    {
+      title: 'HRFast',
+      description: 'Smart Applicant Tracking System (ATS) with Next.js, FastAPI, PostgreSQL, and Ollama local LLM integration. Features automated resume parsing and a LangChain ReAct chatbot assistant.',
+      badge: 'AI Engineering',
+      githubUrl: 'https://github.com/radhofan/mekiki'
+    },
+    {
+      title: 'Explorato',
+      description: 'A single-player guild management game with a JavaFX desktop client backed by a Spring Boot REST and SSE API, PostgreSQL, Redis expedition caching, and RabbitMQ job processing.',
+      badge: 'Java',
+      githubUrl: 'https://github.com/radhofan/daichou'
+    },
+    {
+      title: 'Kuasar RAG',
+      description: 'RAG pipeline boosting LLM accuracy with ChromaDB vector storage and 30% retrieval efficiency gain via custom ranking.',
+      badge: 'AI Engineering',
+      githubUrl: 'https://github.com/radhofan/kuasar-rag-system'
+    }
+  ],
+  other: [
+    {
+      title: 'KHS Monitor',
+      description: 'Academic performance monitoring platform offering real-time GPA calculation, grade trend analytics, and student record management.',
+      badge: 'Web / Academic',
+      githubUrl: 'https://github.com/radhofan/monitoring-khs'
+    },
+    {
+      title: 'Tasuku',
+      description: 'Streamlined task management application featuring visual kanban boards, priority tagging, and productivity metrics.',
+      badge: 'Productivity',
+      githubUrl: 'https://github.com/radhofan/tasuku'
+    },
+    {
+      title: 'Dagangi',
+      description: 'Comprehensive e-commerce and point-of-sale inventory system with real-time stock updates and transaction reports.',
+      badge: 'E-Commerce',
+      githubUrl: 'https://github.com/radhofan/dagangi'
+    },
+    {
+      title: 'HabbiTracker',
+      description: 'Daily habit tracker application with streak visualizations, progress heatmaps, and customizable daily reminders.',
+      badge: 'Mobile / Web',
+      githubUrl: 'https://github.com/radhofan/HabbiTracker'
+    },
+    {
+      title: 'GapRed',
+      description: 'Published PyPI ML library streamlining data preprocessing and feature engineering for rapid machine learning prototyping.',
+      badge: 'ML / Python',
+      githubUrl: 'https://github.com/radhofan/Gapred'
+    },
+    {
+      title: 'SoftTest',
+      description: 'Automated black-box REST API security scanner detecting injection vulnerabilities and broken access control.',
+      badge: 'Security / Python',
+      githubUrl: 'https://github.com/radhofan/SoftTest'
+    },
+    {
+      title: 'MuseumTIX',
+      description: 'End-to-end museum ticketing system with JWT authentication, seat allocation, and automated e-ticket generation.',
+      badge: 'Fullstack',
+      githubUrl: 'https://github.com/radhofan/MuseumTIX'
+    }
+  ]
+};
+---
+
+<BaseLayout title="Projects">
+  <div class="heading">Featured Projects</div>
+
+  <ul style="padding-left: 2.5ch; margin-bottom: 3ch;">
+    {
+      projects.featured.map((p) => (
+        <li style="margin-bottom: 1.2ch;">
+          <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" style="font-weight: bold;">
+            {p.title}
+          </a>{' '}
+          <span style="font-size: 0.85em; color: #666;">[{p.badge}]</span>
+          <div style="margin-top: 0.2ch;">{p.description}</div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="heading">Other Projects</div>
+
+  <ul style="padding-left: 2.5ch;">
+    {
+      projects.other.map((p) => (
+        <li style="margin-bottom: 1.2ch;">
+          <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" style="font-weight: bold;">
+            {p.title}
+          </a>{' '}
+          <span style="font-size: 0.85em; color: #666;">[{p.badge}]</span>
+          <div style="margin-top: 0.2ch;">{p.description}</div>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

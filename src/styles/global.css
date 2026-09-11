@@ -91,6 +91,11 @@ a.title:hover {
   text-decoration: underline;
 }
 
+.active-nav {
+  color: #111 !important;
+  text-decoration: underline;
+}
+
 img {
   border: 1px solid black;
   max-width: 100%;

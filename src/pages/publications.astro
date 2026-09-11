@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const publications = [
+  {
+    title: 'Enhancing User-Side Fairness on Neural Collaborative Filtering Using Generative Adversarial Network-Based Augmentation',
+    authors: 'Radhofan Azizi Ramdhani, Rita Rismala',
+    conference: '2026 14th International Conference on Information and Communication Technology (ICoICT)',
+    publisher: 'IEEE',
+    year: '2026',
+    url: 'https://ieeexplore.ieee.org/document/11664748',
+    description: 'Mitigating user-side fairness disparities in recommender systems by augmenting sparse interaction data via Generative Adversarial Networks (GANs).'
+  }
+];
+---
+
+<BaseLayout title="Publications">
+  <div class="heading">Publications</div>
+
+  <ul style="padding-left: 2.5ch; margin-top: 1.5ch;">
+    {
+      publications.map((pub) => (
+        <li style="margin-bottom: 2ch;">
+          <a href={pub.url} target="_blank" rel="noopener noreferrer" style="font-weight: bold;">
+            {pub.title}
+          </a>
+          <div style="color: #444; font-size: 0.9em; margin-top: 0.3ch;">
+            {pub.authors}
+          </div>
+          <div style="color: #666; font-size: 0.85em; font-style: italic; margin-top: 0.2ch;">
+            {pub.conference} &bull; {pub.publisher} ({pub.year})
+          </div>
+          <div style="margin-top: 0.5ch; font-size: 0.95em;">
+            {pub.description}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

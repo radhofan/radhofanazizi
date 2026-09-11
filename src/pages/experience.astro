@@ -31,62 +31,9 @@ const experiences = [
     skills: ['Next.js', 'PostgreSQL', 'JWT', 'RBAC', 'Full-stack']
   }
 ];
-
-const publications = [
-  {
-    title: 'Enhancing User-Side Fairness on Neural Collaborative Filtering Using Generative Adversarial Network-Based Augmentation',
-    authors: 'Radhofan Azizi Ramdhani, Rita Rismala',
-    conference: '2026 14th International Conference on Information and Communication Technology (ICoICT)',
-    publisher: 'IEEE',
-    year: '2026',
-    url: 'https://ieeexplore.ieee.org/document/11664748',
-    description: 'Mitigating user-side fairness disparities in recommender systems by augmenting sparse interaction data via Generative Adversarial Networks (GANs).'
-  }
-];
 ---
 
-<BaseLayout title="Homepage">
-  <div class="heading">About</div>
-
-  <div style="display: flex; gap: 2.5ch; align-items: flex-start; margin-bottom: 2ch; flex-wrap: wrap;">
-    <img
-      src="/profile.jpg"
-      alt="Radhofan Azizi"
-      style="width: 175px; height: 175px; object-fit: cover; border: none; outline: none; border-radius: 6px; flex-shrink: 0;"
-    />
-    <div style="flex: 1; min-width: 260px;">
-      <p style="margin-top: 0; line-height: 1.6;">
-        👋 Hi, my name is Radhofan! I am a Fullstack Software & AI Engineer. I specialize in clean code quality, modern software architecture, and translating complex business goals into effective, scalable technical solutions.
-      </p>
-      <p style="line-height: 1.6; margin-bottom: 0;">
-        🚀 I am also deeply interested in research, particularly at the intersection of software engineering, system architecture, and machine learning.
-      </p>
-    </div>
-  </div>
-
-  <div class="heading">Publications</div>
-
-  <ul style="padding-left: 2.5ch; margin-top: 1ch; margin-bottom: 2ch;">
-    {
-      publications.map((pub) => (
-        <li style="margin-bottom: 2ch;">
-          <a href={pub.url} target="_blank" rel="noopener noreferrer" style="font-weight: bold;">
-            {pub.title}
-          </a>
-          <div style="color: #444; font-size: 0.9em; margin-top: 0.3ch;">
-            {pub.authors}
-          </div>
-          <div style="color: #666; font-size: 0.85em; font-style: italic; margin-top: 0.2ch;">
-            {pub.conference} &bull; {pub.publisher} ({pub.year})
-          </div>
-          <div style="margin-top: 0.5ch; font-size: 0.95em;">
-            {pub.description}
-          </div>
-        </li>
-      ))
-    }
-  </ul>
-
+<BaseLayout title="Experience">
   <div class="heading">Experience</div>
 
   <div style="display: flex; flex-direction: column; gap: 3ch;">

@@ -3,6 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const experiences = [
   {
+    title: 'AI Product Engineer',
+    company: 'WorldWhite Enterprise',
+    location: 'South Jakarta, ID',
+    type: 'Full-Time',
+    duration: 'Sep 2026 – Present',
+    responsibilities: [
+      'Sole engineer owning the end-to-end development of an AI-powered fashion styling mobile app across iOS and Android.',
+      'Built automated computer vision pipelines, real-time outfit recommendation models, backend infrastructure from scratch and handle DevOps pipeline.'
+    ],
+    skills: ['AI Engineering', 'Computer Vision', 'Recommendation Systems', 'Mobile Development', 'DevOps']
+  },
+  {
     title: 'Software Engineer',
     company: 'Zeta Solutions',
     location: 'Bandung, ID',
@@ -89,7 +101,7 @@ const publications = [
 
   <div class="heading">Experience</div>
 
-  <div style="display: flex; flex-direction: column; gap: 3ch;">
+  <div style="display: flex; flex-direction: column; gap: 3ch; margin-bottom: 5ch;">
     {
       experiences.map((exp) => (
         <div>
